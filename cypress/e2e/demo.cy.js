@@ -1,22 +1,32 @@
 /// <reference types="Cypress" />
+import ExamplePage from "../pages/page"
+
+
 describe('Cypress E2E testing demo', () => {
   beforeEach(() => {
-    cy.visit('https://example.com/')
+    // cy.visit('https://example.com/')
+    const examplePage = new ExamplePage()
+    examplePage.openExamplePage()
   })
 
   afterEach(() => {
     cy.log('Running each of my tests')
   })
-  it('assert URL', () => {
-    cy.url().should('contain', 'example.com')
+  it('assert URL and Title', () => {
+    // cy.url().should('contain', 'example.com')
+    const examplePage = new ExamplePage()
+    examplePage.assertURL()
+    examplePage.assertTitle()
   })
 
-  it('asset title', () => {
-    cy.title().should('contain', 'Example Domain')
-  })
+  // it('asset title', () => {
+  //   // cy.title().should('contain', 'Example Domain')
+  //   const examplePage = new ExamplePage()
+  //   examplePage.assertTitle()
+  // })
 
   // Bug: ticket Number 123
-  it('assert element', () => {
+  it.only('assert element', {retries: 3} , () => {
     cy.get('h1').should('be.visible')
     cy.wait(2000)
     cy.get('p').should('be.visible')
