@@ -1,7 +1,4 @@
 /// <reference types="Cypress" />
-
-const { first } = require("cypress/types/lodash");
-
 describe('Cypress Modal', () => {
   it('Open & Assert modal', () => {
     cy.visit('https://practice-automation.com/modals/')

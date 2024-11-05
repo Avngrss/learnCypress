@@ -1,0 +1,5 @@
+//npx cypress open - open cypress to exsecute e2e tests cases
+//npx cypress run - execute all tests
+//npx cypress run --spec "cypress/e2e/invoke.cy.js" - run 1 test
+//npx cypress run --spec "cypress/e2e/invoke.cy.js" --headed - run 1 test and see it into the browser(electron default)
+//npx cypress run --spec "cypress/e2e/invoke.cy.js" --headed --browser chrome - run test in Chrome

@@ -27,7 +27,7 @@ describe('Cypress E2E testing demo', () => {
 
   // Bug: ticket Number 123
   it.only('assert element', {retries: 3} , () => {
-    cy.get('h1').should('be.visible')
+    cy.get('h1').should('not.be.visible')
     cy.wait(2000)
     cy.get('p').should('be.visible')
   })
